@@ -1,0 +1,47 @@
+
+.navbar-brand>img {
+  padding: 0px;
+  margin-left: 50px;
+  margin-right: 200px;
+  padding: 0px;
+  opacity:0.2;
+  padding-left: 0px; 
+}
+a.ticket-link {
+    color: green;
+}
+
+/*google fonts h1 header*/
+h1 { color: #000000; font: 16px "Righteous", sans-serif; font-weight: 400; 
+    font-family: 'Righteous', cursive;
+    font-size: 40px;
+    color: #B0C4DE;
+    text-align: center;    
+    }
+
+/*https://mycolor.space color gradient*/
+body{
+background-image: linear-gradient(to left bottom, #7877ea, #5d75df, #4372d2, #276fc3, #006ab4);
+}
+
+
+
+a:link {
+	 text-decoration: underline;
+   }
+
+#myCarousel img {
+
+width: auto;
+
+height: 225px;
+
+max-height: 225px;
+
+}
+
+/*Bootstraps container fluid too large, needed an even smaller div for most pagses*/
+.container.small {
+   width: 800px;
+}
+

@@ -1,0 +1,362 @@
+<!DOCTYPE HTML>
+		<html>
+			<head>
+			 <link rel="stylesheet"
+		href="https://fonts.googleapis.com/css?family=Righteous">
+					<!--Bootstrap-->
+				<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+				
+				<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+				
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+				
+				<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+				<!--CSS Style-->
+				<link rel="stylesheet" href="../Code/style.css">
+
+						<script src="handlebars.js"></script>
+				<!--Typeahead JS-->
+				<script src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
+				
+			
+				
+			</head>
+
+			
+
+			<body>
+			
+				<!--Navbar-->
+		<span
+		><nav class="navbar navbar-expand-lg navbar-dark bg-blue">
+		<a class="navbar-brand" href="../index.html"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+		</button>
+		<a class="navbar-image" href="../index.html">
+					<img src="../Images/logo.png" width= "300" height = "90" alt="logo" style = opacity="1">
+				</a>
+		</span>
+				
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="../index.html">Home</a>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="../FAQ/FAQ.html">FAQ</a>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="./KnowledgeHome.html" style = "background-color: yellow; color:blue";>KnowledgeBase</a>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="../TicketingSystem/TicketHome.html">Ticketing System</a>
+						</li>
+					</ul>
+
+				</div>
+			</nav> 
+		 <h1>Automated User Provisioning Guidelines</h1>
+
+
+		<!--CONTENT-->
+
+			  
+		</div>
+			<br>
+
+		<div class = "container small">
+
+		
+
+			<!--Card header/footer style with article-->
+			
+	<div class="card">
+			
+		<div class="card-body">
+								<p class="card-text">
+									Workvivo has minimal data requirements when it comes to provisioning users for access to the application. 
+									We request that any incoming data is provided in the format that it should be displayed in the Workvivo system. 
+									If any fields have specific formatting conventions in the third-party system - for example, if names are stored in uppercase, 
+									we request that they are sent to Workvivo in the correct case for display purposes. 
+								</p>
+									<br>
+										
+			<p>
+						For file-based user data import, we support CSV, XLS and XLSX files as standard. For all of these formats, we can support import without modification as long as it adheres to the following attributes: <br>
+						<br>
+						- The first row of the file contains the column headings as described in the field lists outlined in this document. <br>
+						- The order of columns is not important. • Any columns not required by Workvivo will be ignored. <br>
+						- For CSV files specifically, we support import without modification on the basis that: <br>
+						 
+						- Fields are enclosed with double quotes. <br>
+						- Columns are separated with commas. <br>
+						- Rows are terminated by a newline character. <br>
+						 We can support files that fall outside of the above requirements, but system modification may be required to do so.
+						<br>
+						<br>
+						<br>
+			 
+					<h2> Mandatory fields that we require to provision users in the Workvivo system</h2>
+<!-TABLE-->
+						<table>
+						  <tr>
+							<th>Column Heading</th>
+							<TH>Description</th>
+							<th>Format</th>
+							<th>Noes</th>
+						  </tr>
+						  <tr>
+							<td>ID</td>
+							<td>Third Party ID</td>
+							<td>String</td>
+							<td>We use this to find existing user records and check if an update or deactivation is required. </td>
+							</tr>
+						  <tr>
+							<td>Email</td>
+							<td>Email Address</td>
+							<td>String</td>
+							<td> Must be a valid email address and must be unique per user. </td>
+							
+						  </tr>
+						  
+						  <tr>
+							<td>First Name</td>
+							<td>First Name</td>
+							<td>String</td>
+							<td></td>
+							
+						  </tr>
+						  <tr>
+							<td>Last Name</td>
+							<td>Last Name</td>
+							<td>String</td>
+							<td></td>
+						  </tr>
+						  <tr>
+							<td>Job Title</td>
+							<td>Job Title</td>
+							<td>String</td>
+							<td></td>
+						  </tr>
+						  <tr>
+							<td>Group 1 Type</td>
+							<td>Department Style Group</td>
+							<td>String</td>
+							<td>The column heading should be the name of the group type, e.g Department, Division, Work Group, etc.</td>
+							
+							 <tr>
+							<td>Group 2 Type</td>
+							<td>Location Style Group</td>
+							<td>String</td>
+							<td>The column heading should be the name of the group type, e.g Location, Office, Building Number, etc. </td>
+						  </tr>
+						  </tr>
+						</table>
+						
+						<br>
+						<br>
+					
+						<p>
+						We require at least two group columns to classify users. We require one department-style group type such as Department, 
+						Division, Team, etc; and one location-style group type such as Location, Office, Country, Region, etc. 
+						</p>
+						<br>
+						
+						<p>
+						We support the inclusion of any number of groups, but the group types need to be pre-configured in Workvivo before the group data will be imported. For group types,
+						if the name of the group type contains a space, e.g. “Work Location”, please include the space in the Column Heading, i.e. use “Work Location” and not “WorkLocation”. 
+						</p>
+						<br>
+						
+						<p>
+						The group data should be in a string format and should be the name of the group. 
+						If a group does not already exist in Workvivo we will create it and assign the user to it. 
+						Please don’t send additional data in the group columns or these will be treated as part of the group name. 
+						<br>
+						
+						<br>
+						<br>
+						
+						<p>
+						<h3>Group Configuration </h3>
+						
+						<br>
+						
+						<p>
+						Prior to import, it is important for us to configure the group types that will be sent in the file, 
+						otherwise group columns will be ignored. To do this, we need a list of the group types to be sent to us in advance of the first import. 
+						</p>
+						
+						<br>
+						
+						<p>
+						<h4>Handling of deactivated users </h4>
+						<br>
+						
+						<p>
+						The default Workvivo configuration operates on the basis that a complete list of current active users is sent to us. we will analyse the import file to determine: 
+						</p>
+						<br>
+						
+						<p>
+						- What new user records need to be created <br>
+						- What existing user records need to be updated <br>
+						- What existing user records need to be deactivated <br>
+						</p>
+						<br>
+						
+						<p>
+						By default, we determine what records should be deactivated on the basis of omission. In other words, if a user is set up in Workvivo. This is not present in the import file. 
+						We will deactivate their account. We will also deactivate users if a LeaveDate column is included in the file and if this date is in the past. 
+						Note that if more than 5% of users would be deactivated based on the file contents. We will skip deactivating users and manually investigate if so many users should be deactivated.  
+						</p>
+						
+						<br>
+						<br>
+					<a href="knowledgeHome.html" class="btn btn-primary">Return to Knowledgebase</a>
+
+	 
+	  
+
+
+	 
+			</p>
+								
+		</div>
+	</div>
+	</div>
+			
+<br><nr>			
+<div style="background:#003d99;color:#FFF">
+<!-- Footer -->
+<footer class="page-footer font-small unique-color-dark">
+
+
+<div style="background:#003d99;color:#FFF">
+<!-- Footer -->
+<footer class="page-footer font-small unique-color-dark">
+
+  <div class="container">
+
+
+
+  </div>
+
+<!-- Footer -->
+<footer class="page-footer font-small mdb-color pt-4">
+
+<!-- Footer Links -->
+<div class="container text-center text-md-left">
+
+  <!-- Footer links -->
+  <div class="row text-center text-md-left mt-3 pb-3">
+
+    <!-- Grid column -->
+    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+      <h6 class="text-uppercase mb-4 font-weight-bold">WorkVivo</h6>
+      <p>Workvivo helps companies maximise the emotional connection their people have to the organisation and its 
+      goals.</p>
+    </div>
+    <!-- Grid column -->
+
+    <hr class="w-100 clearfix d-md-none">
+
+    <!-- Grid column -->
+    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+      <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+      <p>
+       Activity Feed
+      </p>
+      <p>
+        Strategic Alignment
+      </p>
+      <p>
+        Peer Recognition
+      </p>
+      <p>
+        Reporting & Analytics
+      </p>
+    </div>
+    <!-- Grid column -->
+
+    <hr class="w-100 clearfix d-md-none">
+
+    <!-- Grid column -->
+    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+      <h6 class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
+      <p>
+        <a href="#!">Your Account</a>
+      </p>
+      <p>
+        <a href="#!">Become an Affiliate</a>
+      </p>
+      <p>
+        <a href="#!">Shipping Rates</a>
+      </p>
+      <p>
+        <a href="#!">Help</a>
+      </p>
+    </div>
+
+    <!-- Grid column -->
+    <hr class="w-100 clearfix d-md-none">
+
+    <!-- Grid column -->
+    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+      <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+      <p>
+        <i class="fa fa-home mr-3"></i> 
+        Douglas T12 PDD2
+
+    </p>
+      <p>
+        <i class="fa fa-envelope mr-3"></i> hello@workvivo.com</p>
+      <p>
+        <i class="fa fa-phone mr-3"></i> support@workvivo.com</p>
+      <p>
+        <i class="fa fa-print mr-3"></i> + 01 234 567 89</p>
+    </div>
+    <!-- Grid column -->
+
+  </div>
+  <!-- Footer links -->
+
+  <hr>
+
+  <!-- Grid row -->
+  <div class="row d-flex align-items-center">
+
+    <!-- Grid column -->
+    <div class="col-md-7 col-lg-8">
+
+      <!--Copyright-->
+      <p class="text-center text-md-left"> 
+      © 2018 Workvivo Limited. All rights reserved. 
+      <a href="#">Privacy Policy</a>
+      </p>
+
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-md-5 col-lg-4 ml-lg-0">
+
+
+
+
+  </div>
+  <!-- Grid row -->
+
+</div>
+<!-- Footer Links -->
+
+</footer>
+<!-- Footer -->
+				
+		</body>
+
+
+
+</html>

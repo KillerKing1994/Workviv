@@ -1,0 +1,312 @@
+<!DOCTYPE HTML>
+		<html>
+			<head>
+			 <link rel="stylesheet"
+		href="https://fonts.googleapis.com/css?family=Righteous">
+					<!--Bootstrap-->
+				<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+				
+				<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+				
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+				
+				<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+				=
+				<!--CSS Style-->
+				<link rel="stylesheet" href="../Code/style.css">
+
+						<script src="handlebars.js"></script>
+				<!--Typeahead JS-->
+				<script src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
+				
+			
+				
+			</head>
+
+			
+
+			<body>
+			
+				<!--Navbar-->
+		<span
+		><nav class="navbar navbar-expand-lg navbar-dark bg-blue">
+		<a class="navbar-brand" href="../index.html"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+		</button>
+		<a class="navbar-image" href="../index.html">
+					<img src="../Images/logo.png" width= "300" height = "90" alt="logo" style = opacity="1">
+				</a>
+		</span>
+				
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="../index.html">Home</a>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="../FAQ/FAQ.html">FAQ</a>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="./KnowledgeHome.html" style = "background-color: yellow; color:blue";>KnowledgeBase</a>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="../TicketingSystem/TicketHome.html">Ticketing System</a>
+						</li>
+					</ul>
+
+				</div>
+			</nav> 
+		 <h1>Authentication</h1>
+
+
+		<!--CONTENT-->
+
+	
+			  
+		</div>
+			<br>
+
+		<div class = "container small">
+
+
+			<!--Card header/footer style with article-->
+			
+					<div class="card">
+			
+							<div class="card-body">
+
+							<p class="card-text">
+						
+<p>
+
+If your organisation does not have a federated identity management solution, you can choose to store user passwords in Workvivo itself. With this approach, users will need to login to Workvivo with their email address and a password of their choosing. The primary benefit of this approach is that it’s the simplest – no configuration is required to get it working. 
+Setting up passwords When an administrator (or automated provisioning process) creates a user account, there is an option to send the user an email with a special link they can use to set up their password. 
+ </p>
+ 
+ <p>
+We also have the option to send out a batch of emails with password setup links to users who do not yet have a password set. This facilitates loading users in bulk from a CSV or Excel file, or through an automated provisioning process. 
+Forgotten password recovery If a user forgets their password, it cannot be recovered as we store passwords using a one-way hashing algorithm which cannot be reversed. Instead, users are sent an email with a one-time link that lets them change their password. 
+ </p>
+ 
+ 
+ 
+ <p>
+Authentication, Authorisation & Application Security 
+ 
+Remember me When logging in to the Workvivo Web application, users have the option to “remember me”. When this option is checked, users will stay logged in indefinitely, until they logout or clear their browser cookies. If this option remains unchecked, users will remain logged in for the duration of the browser session before being logged out. Note that some browsers treat the concept of a browser session differently to others – in some browsers as soon as you close the window it closes the session, with others a session may last until you restart the browser or the entire computer. 
+ </p>
+ 
+ <p>
+Note that the provision of a “remember me” feature can be configured to be switched off at an organisation-level on request. 
+Changing password Users can easily change their password in Workvivo through the “Edit My Profile” section of the application – on both the Web application and on the mobile apps for iOS and Android. Users are asked to enter their old password again in order to reauthenticate before their password is updated. 
+
+Password hashing Passwords are stored in the Workvivo database as a one-way irreversible hashed value. This means that if someone were to access the user record directly in the database, they would not be able to discover the user’s actual password. The hashing algorithm used in Workvivo is bcrypt, with 10 iterations and a securely generated salt. 
+Delegated Access Workvivo discourages the sharing of passwords – even with trusted colleagues. To provide for a scenario where one user may wish another user to login to Workvivo on their behalf, we provide a delegated access feature. The user essentially selects which users they want to be able to access their account, and that user will be able to switch to the other account from within Workvivo without knowing that user’s password. 
+ </p>
+ 
+ 
+ <p>
+Workvivo Staff and User Passwords At Workvivo, we have an internal policy that no member of our staff will ever ask a user for their password. We recommend advising your users to never give anyone their Workvivo password in person, over the phone, by email or through any other means.   
+
+</p>
+
+
+<br>
+<br>
+
+
+
+
+
+ <p>
+User Session Storage 
+When a user logs in to the Workvivo Web application, a unique random session identifier is created for that session. We then store a secure cookie in the user’s browser which is passed to our servers with every request – this allows us to identify the user as they navigate through the application. When a user logs out, this session identifier is destroyed, as is the cookie. 
+ </p>
+ 
+ <p>
+When a user account is deactivated or deleted, their sessions are also deleted which means they will be logged out of the Workvivo application and no longer be able to login until their account is restored. We also have the ability to log a specific user out remotely (without deactivating or deleting their account) if required. 
+ </p>
+ 
+ <br>
+ <br>
+ <br>
+ 
+We store user session data in an in-memory Redis cluster, hosted on AWS via the ElastiCache managed service. This cluster is isolated within our own Virtual Private Cloud (VPC) in AWS, and access to it is restricted solely to our Web Application Servers. Data in this store is encrypted both at-rest and in-transit, as are the nightly backups that are automatically created. We retain these backups for one day after which they are automatically destroyed.  
+
+<br>
+<br>
+ 
+ <p>
+API Authentication 
+Our native mobile apps for iOS and Android communicate with the Workvivo back-end via a RESTful JSON API. This is the same API that is used by our Web Application. With the Web app we can leverage cookies to store user state in the browser, but we do not have the concept of cookies in native mobile apps. Instead, we use an OAuth2 compatible API authentication server which generates access tokens that can be used to identify a user on these types of devices. 
+ Once an access token has been created, we store this securely on the device and pass this value in with every subsequent API call. The API validates the access token on every request, and if the token is invalid, the API will return an error response. 
+ <br>
+ 
+ <p>
+On the native mobile apps, users remain logged in until they log out or their access tokens are revoked. When a user is deactivated or deleted, their access tokens are automatically deleted preventing them from logging in and automatically logging them out on any devices they have signed in. We can also revoke access tokens for any given user at any time which will effectively log them out of all devices they have signed in on. 
+Logging in on Mobile (SSO environment) For customers using SSO authentication, logging in on mobile has the following process: <br>
+
+<p>
+ 1. User enters their email address<br>
+ 2. A Web view pops up in the app that redirects to the identity provider’s sign in page – the user must enter their credentials for the IDM here to login<br>
+ 3. Once the identity provider has authenticated the user they redirect back to Workvivo and the user is now logged in. <br>
+ 
+</p> 
+ 
+ <br>
+ 
+ <p>
+Logging in on Mobile (Password environment) The process is slightly different for customers using Password authentication: <br>
+<br>
+ 1. User enters their email address <br>
+ 2. User enters their Workvivo password <br>
+ 3. Workvivo verifies the user credentials and the user is now logged in. <br>
+ 
+  
+
+
+ 
+					</p>
+							<p class="card-text"> <a href="knowledgeHome.html" class="btn btn-primary">Return to Knowledgebase</a>
+							</div>
+					</div>
+					
+		</div>
+
+		</div>
+
+  <br><br>
+				
+<div style="background:#003d99;color:#FFF">
+<!-- Footer -->
+<footer class="page-footer font-small unique-color-dark">
+
+
+<div style="background:#003d99;color:#FFF">
+<!-- Footer -->
+<footer class="page-footer font-small unique-color-dark">
+
+  <div class="container">
+
+
+
+  </div>
+
+  
+
+<!-- Footer -->
+<footer class="page-footer font-small mdb-color pt-4">
+
+<!-- Footer Links -->
+<div class="container text-center text-md-left">
+
+  <!-- Footer links -->
+  <div class="row text-center text-md-left mt-3 pb-3">
+
+    <!-- Grid column -->
+    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+      <h6 class="text-uppercase mb-4 font-weight-bold">WorkVivo</h6>
+      <p>Workvivo helps companies maximise the emotional connection their people have to the organisation and its 
+      goals.</p>
+    </div>
+    <!-- Grid column -->
+
+    <hr class="w-100 clearfix d-md-none">
+
+    <!-- Grid column -->
+    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+      <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+      <p>
+       Activity Feed
+      </p>
+      <p>
+        Strategic Alignment
+      </p>
+      <p>
+        Peer Recognition
+      </p>
+      <p>
+        Reporting & Analytics
+      </p>
+    </div>
+    <!-- Grid column -->
+
+    <hr class="w-100 clearfix d-md-none">
+
+    <!-- Grid column -->
+    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+      <h6 class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
+      <p>
+        <a href="#!">Your Account</a>
+      </p>
+      <p>
+        <a href="#!">Become an Affiliate</a>
+      </p>
+      <p>
+        <a href="#!">Shipping Rates</a>
+      </p>
+      <p>
+        <a href="#!">Help</a>
+      </p>
+    </div>
+
+    <!-- Grid column -->
+    <hr class="w-100 clearfix d-md-none">
+
+    <!-- Grid column -->
+    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+      <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+      <p>
+        <i class="fa fa-home mr-3"></i> 
+        Douglas T12 PDD2
+
+    </p>
+      <p>
+        <i class="fa fa-envelope mr-3"></i> hello@workvivo.com</p>
+      <p>
+        <i class="fa fa-phone mr-3"></i> support@workvivo.com</p>
+      <p>
+        <i class="fa fa-print mr-3"></i> + 01 234 567 89</p>
+    </div>
+    <!-- Grid column -->
+
+  </div>
+  <!-- Footer links -->
+
+  <hr>
+
+  <!-- Grid row -->
+  <div class="row d-flex align-items-center">
+
+    <!-- Grid column -->
+    <div class="col-md-7 col-lg-8">
+
+      <!--Copyright-->
+      <p class="text-center text-md-left"> 
+      © 2018 Workvivo Limited. All rights reserved. 
+      <a href="#">Privacy Policy</a>
+      </p>
+
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-md-5 col-lg-4 ml-lg-0">
+
+
+
+
+  </div>
+  <!-- Grid row -->
+
+</div>
+<!-- Footer Links -->
+
+</footer>
+<!-- Footer -->	
+		</body>
+
+
+
+</html>

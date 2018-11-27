@@ -1,0 +1,398 @@
+<!DOCTYPE HTML>
+		<html>
+			<head>
+			 <link rel="stylesheet"
+		href="https://fonts.googleapis.com/css?family=Righteous">
+					<!--Bootstrap-->
+				<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+				
+				<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+				
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+				
+				<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+					
+				<!--CSS Style-->
+				<link rel="stylesheet" href="../Code/style.css">
+
+						<script src="handlebars.js"></script>
+				<!--Typeahead JS-->
+				<script src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
+				
+			
+				
+			</head>
+
+			
+
+			<body>
+			
+				<!--Navbar-->
+		<span
+		><nav class="navbar navbar-expand-lg navbar-dark bg-blue">
+		<a class="navbar-brand" href="../index.html"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+		</button>
+		<a class="navbar-image" href="../index.html">
+					<img src="../Images/logo.png" width= "300" height = "90" alt="logo" style = opacity="1">
+				</a>
+		</span>
+				
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="../index.html">Home</a>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="../FAQ/FAQ.html">FAQ</a>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="./KnowledgeHome.html" style = "background-color: yellow; color:blue";>KnowledgeBase</a>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="../TicketingSystem/TicketHome.html">Ticketing System</a>
+						</li>
+					</ul>
+
+				</div>
+			</nav> 
+		 <h1>SCIM User Provisioning For Azure Active Directory</h1>
+
+
+		<!--CONTENT-->
+
+			<br>
+					<!-- -----------------------------------------------------------------------------------   -->
+													<!--TYPEAHEAD-->
+				  <!-- -----------------------------------------------------------------------------------   -->
+		<div class = "container small">
+
+		
+
+			<!--Card header/footer style with article-->
+			
+	<div class="card">
+			
+		<div class="card-body">
+										<p class="card-text">
+								
+								<p>
+								The information contained in these documents is confidential. Privileged and only for the information of the intended recipient and may not be used if
+								published or redistributed without the prior written consent of Workvivo Ltd. 
+								The opinions expressed are in good faith and while every care has been taken in preparing these documents.;/ 
+								Workvivo makes no representations and gives no warranties of whatever nature in respect of these documents, including but not limited to the accuracy or completeness of any information
+								facts and/or opinions contained therein. 
+ 
+								Workvivo Ltd, its subsidiaries, the directors, employees and agents cannot be held liable for the use of and reliance of the opinions, estimates, forecasts and findings in these documents.
+								<br>
+								<br>
+								
+								<h5> Adding Workvivo as an Enterprise application in Azure AD </h5><br>
+								<p>
+								The first step to configuring Workvivo in Azure AD is to set Workvivo up as an Enterprise application using the Azure portal. 
+								</p>
+								<br>
+								
+								<p><i>If you have already set up Workvivo as an application in Azure AD for Single Sign On purposes, you can skip this step and go directly to the existing Workvivo application in Azure AD. 
+								</i></p><br>
+								
+								<p>
+								In the Microsoft Azure Portal click on Azure Active Directory in the navigation bar on the left-hand-side of the screen. 
+								This will open the Azure AD. Find the menu item Enterprise applications under the Manage subnavigation list on the left-hand-side of the screen (as shown in the screenshot below).
+								</p>								
+								<br>
+								<img src="knowledgeimage1.png"  width="300" height="200">
+								<br>
+								<br>
+								<p>
+								On the next screen, locate and click the 'New application' button in the toolbar. 
+								This will open a directory of applications you can add to your Azure AD instance. Under 'Add your own app' at the top of this screen.
+								Click on the 'Non-gallery application' option. 
+								<br>
+								<br>
+								<img src="knowledgeimage2.png"  width="600" height="250">
+								<br>
+								<p>
+								A sidebar will open, give the application the name 'Workvivo' and click the 'Add' button at the bottom of the screen. 
+								This will take a minute or so. when it is done you will be brought to the 'Overview' screen for the newly created Workvivo application. 
+								</p>
+								<br>
+								<p>
+								This would be a good time to assign the users and/or groups in Active Directory that you want to have access to the Workvivo application. 
+								To do this navigate to the'Users and groups' menu option and click the 'Add user' button. 
+								Don’t worry, this will also allow you to add groups rather than just individual users. 
+								</p>
+								<br>
+								<p><i><p><i>If you have already set up Workvivo as an application in Azure AD for Single Sign On purposes, you can skip this step and go directly to the existing Workvivo application in Azure AD. 
+								</i></p></i><br> 
+								<br>
+								<p>
+								Next click 'Users and groups', 
+								search or browse to find the users or groups you want to assign access and click 'Select'. Then back on the 'Add Assignment' screen 
+								click 'Assign' to assign the selected users and groups access to the Workvivo application. 
+								<p/>
+								<br>
+								
+								<h4>Setting up Provisioning Tenant URL and Secret </h4>
+								<p>
+								If you skipped the previous step navigate to the Workvivo application in your Azure AD instance. On the lefthand side, under the 'Mange' sub-navigation list
+								click on 'Provisioning' to go to the provisioning setup screen. 
+ 
+								</P>
+								<br>
+								<b>https://[yourworkvivodomain]/scim/v2 </b>
+								<br>
+								<br>
+								<p>
+								Where 'yourworkvivodomain' is the domain name for your Workvivo instance e.g. xyzcompany.workvivo.com. 
+ 
+								Under 'Secret Token' enter the value provided to you by your Workvivo contact. Note that this token can’t be recovered so if you lose it a new token will need to be generated and set up in Azure AD. 
+								 
+								Press the 'Test Connection' button Azure AD should respond with a success message. Now press the 'Save' button at the top of the screen once again Azure AD should respond with a success message. 
+								</p>
+								
+								<h4>Disabling AD Group Provisioning </h4>
+								<br>
+								<br>
+								<p>
+								At this point, there should be two records displayed under the Mappings section, as shown below: 
+								</p>
+								<br>
+								<br>
+								<img src="knowledgebase3.png"  width="600" height="250">
+								<br>
+								<br>
+								<p>
+								For the majority of customers we do not need to synchronise AD groups as we can get the relevant team data required for Workvivo directly 
+								from the AD user resource. So click on the 'Synchronise Azure Active Directory Groups to customappsso' link to edit the mappings for AD Groups. 
+ 
+								On the screen that opens, under 'Enabled' click 'No' to disable AD Groups provisioning and click the 'Save' button at the top of the screen. Click 'Yes' to confirm your changes. 
+								</p>
+								<br>
+								<br>
+								<img src="knowledgeimage4.png"  width="600" height="250">
+								<br>
+								<br>
+								<p>
+								When this is completed click the 'X' at the top right of the window to close the Attribute
+								Mapping screen and return to the previous screen. You should see 'No' under the “Enabled” column for AD Groups in the Mappings section. 
+								</p>
+								<br>
+								<br>
+								<h4>Configuring AD User Mappings </h4>
+								<br>
+								<br>
+								<p>
+								The final step is to confirm the mappings for AD Users. 
+								Click on the link 'Synchronise Azure Active Directory Users to customappsso' to open the Attribute Mapping screen for AD Users. 
+								Press the square icon to the left of the 'X' at the top right of the screen to enlarge it. Under 'Attribute Mappings' verify that the
+								Azure AD attributes being mapped are the correct ones for your organisation. In most cases the default options should work. 
+								</p>
+								
+								<b>1 - externalId </b>
+								<br>
+								We map this to email in Workvivo. 
+								Used by SCIM provisioning to determine when to add or update users in Workvivo. 
+								<br>
+								<br>
+								
+								<b>1. - userName </b>
+								<br>We map this to email in Workvivo. 
+								By default this is set to 'userPrincipalName' in Azure AD – if this attributes value is not an email address in your organisation you should use a different attribute here e.g. 'mail'. 
+								<br>
+								<br>
+								
+								<b>2. - name.givenName </b>
+								<br>
+								The users surname. 
+								<br>
+								<br>
+								
+								<b>3. - title </b>
+								<br>
+								The users job title. 
+								<br>
+								<br>
+								
+								<b>3. - phoneNumbers[type eq “mobile”].value </b>
+								<br>
+								The user’s direct dial number. This is an optional field in Workvivo. 
+								<br>
+								<br>
+								
+								<b>4. - active </b>
+								<br>
+								Whether the user’s account should be active or not. 
+								<br>
+								<br>
+								
+								<b>5. - department </b>
+								<br>
+								The users department. This will be set up as a team in Workvivo  if it does not already exist it will be created and the user will be assigned to it automatically. 
+								<br>
+								<br>
+								
+								<b> addresses[type eq “work”].locality  </b>
+								<br>
+								The user’s location defaults to 'city' in Azure AD. This will be set up as a team in Workvivo if it doesn’t already exist it will be created and the user will be assigned to it automatically. 
+								<br>
+								<br>
+								<br>
+								
+								<p>
+								Again, most organisations should not need to change the default mappings
+								but you can if you would like to use different Azure AD attributes for the given Workvivo field e.g. use a different attribute for location other than 'city'.
+								</p>
+								<br>
+								<br>
+								
+								
+								<a href="knowledgeHome.html" class="btn btn-primary">Return to Knowledgebase</a>
+								
+								
+							</div>
+ 
+ 
+    </div>
+ 
+ </div>
+ 
+ 
+ <div/>
+								
+<br><br>
+				
+<div style="background:#003d99;color:#FFF">
+<!-- Footer -->
+<footer class="page-footer font-small unique-color-dark">
+
+
+<div style="background:#003d99;color:#FFF">
+<!-- Footer -->
+<footer class="page-footer font-small unique-color-dark">
+
+  <div class="container">
+
+
+
+  </div>
+
+  
+
+<!-- Footer -->
+<footer class="page-footer font-small mdb-color pt-4">
+
+<!-- Footer Links -->
+<div class="container text-center text-md-left">
+
+  <!-- Footer links -->
+  <div class="row text-center text-md-left mt-3 pb-3">
+
+    <!-- Grid column -->
+    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+      <h6 class="text-uppercase mb-4 font-weight-bold">WorkVivo</h6>
+      <p>Workvivo helps companies maximise the emotional connection their people have to the organisation and its 
+      goals.</p>
+    </div>
+    <!-- Grid column -->
+
+    <hr class="w-100 clearfix d-md-none">
+
+    <!-- Grid column -->
+    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+      <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+      <p>
+       Activity Feed
+      </p>
+      <p>
+        Strategic Alignment
+      </p>
+      <p>
+        Peer Recognition
+      </p>
+      <p>
+        Reporting & Analytics
+      </p>
+    </div>
+    <!-- Grid column -->
+
+    <hr class="w-100 clearfix d-md-none">
+
+    <!-- Grid column -->
+    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+      <h6 class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
+      <p>
+        <a href="#!">Your Account</a>
+      </p>
+      <p>
+        <a href="#!">Become an Affiliate</a>
+      </p>
+      <p>
+        <a href="#!">Shipping Rates</a>
+      </p>
+      <p>
+        <a href="#!">Help</a>
+      </p>
+    </div>
+
+    <!-- Grid column -->
+    <hr class="w-100 clearfix d-md-none">
+
+    <!-- Grid column -->
+    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+      <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+      <p>
+        <i class="fa fa-home mr-3"></i> 
+        Douglas T12 PDD2
+
+    </p>
+      <p>
+        <i class="fa fa-envelope mr-3"></i> hello@workvivo.com</p>
+      <p>
+        <i class="fa fa-phone mr-3"></i> support@workvivo.com</p>
+      <p>
+        <i class="fa fa-print mr-3"></i> + 01 234 567 89</p>
+    </div>
+    <!-- Grid column -->
+
+  </div>
+  <!-- Footer links -->
+
+  <hr>
+
+  <!-- Grid row -->
+  <div class="row d-flex align-items-center">
+
+    <!-- Grid column -->
+    <div class="col-md-7 col-lg-8">
+
+      <!--Copyright-->
+      <p class="text-center text-md-left"> 
+      © 2018 Workvivo Limited. All rights reserved. 
+      <a href="#">Privacy Policy</a>
+      </p>
+
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-md-5 col-lg-4 ml-lg-0">
+
+
+
+
+  </div>
+  <!-- Grid row -->
+
+</div>
+<!-- Footer Links -->
+
+</footer>
+<!-- Footer -->	
+				
+		</body>
+
+
+
+</html>
